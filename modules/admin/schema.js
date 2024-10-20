@@ -1,4 +1,5 @@
 const { mongoose } = require('../../db/db');
+const CONSTANT = require('../../utils/CONSTANT');
 
 const AdminSchema = new mongoose.Schema({
     // Schema definition here
@@ -6,7 +7,7 @@ const AdminSchema = new mongoose.Schema({
     password: mongoose.Schema.Types.String
 });
 
-const Admin = mongoose.model('Admin', AdminSchema);
+const Admin = mongoose.model(CONSTANT.SCHEMA_STRING.ADMIN, AdminSchema);
 
 module.exports = {
     Admin,

@@ -1,6 +1,7 @@
 const { mongoose } = require('../../db/db');
+const CONSTANT = require('../../utils/CONSTANT');
 
-const requestSchema = {
+const requestSchema = new mongoose.Schema({
     donorName: mongoose.Schema.Types.String,
     donarEmail: mongoose.Schema.Types.String,
     donarMobile: mongoose.Schema.Types.String,
@@ -37,8 +38,8 @@ const requestSchema = {
     //     required: false,  // Field is optional
     // }
 
-}
+})
 
-const Request = mongoose.model('Request', requestSchema);
+const Request = mongoose.model(CONSTANT.SCHEMA_STRING.REQUEST, requestSchema);
 
 module.exports = { Request }

@@ -19,7 +19,6 @@ const addRequest = async (req, res) => {
 
     if (requestValidation.error) {
         return res.json({
-
             message: requestValidation.error
         })
     }
@@ -58,7 +57,7 @@ const deleteRequest = async (req, res) => {
     }
 
     return res.json({
-        message: "record not found"
+        message: "Invalid record"
     }).status(400)
 
 
