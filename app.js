@@ -1,7 +1,7 @@
 const express = require('express');
 const env = require("dotenv").config().parsed
 const app = express();
-const adminRouter = require("./modules/admin/index")
+const adminRouter = require("./Routes/admin")
 // const userRouter = require("./routes/user");
 
 // // Middleware for parsing request bodies

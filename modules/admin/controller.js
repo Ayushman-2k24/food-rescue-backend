@@ -13,7 +13,15 @@ const adminSignUp = async (req, res) => {
         })
     }
 
-    const ans = await Admin.create({
+    const isExist = await Admin.findOne({ email: adminValidation.data })
+
+    if (isExist) {
+        res.json({
+            message: "This email is already used use different one"
+        }).status(404);
+    }
+
+    await Admin.create({
         email: adminValidation.data,
         password: password.data,
     })
