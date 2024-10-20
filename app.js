@@ -1,11 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const env = require("dotenv").config().parsed
 const app = express();
 const adminRouter = require("./Routes/admin")
-// const userRouter = require("./routes/user");
 
 // // Middleware for parsing request bodies
 app.use(express.json());
+app.use(cors());
 
 // Catch all routes that don't match any other routes and return 404 error
 // app.use((req, res, next) => {
@@ -13,7 +14,6 @@ app.use(express.json());
 // });
 
 app.use("/admin", adminRouter)
-// app.use("/user", userRouter)
 
 
 app.listen(env.PORT, () => {

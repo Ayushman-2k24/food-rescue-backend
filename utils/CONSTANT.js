@@ -4,6 +4,7 @@ const CONSTANT = {
         ADMIN: 'Admin',
         REQUEST: 'Request',
         INQUIRY: 'Inquiry',
+        DELIVERY_PERSON: 'DeliveryPerson',
     }
 
 }
